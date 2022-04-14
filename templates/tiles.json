@@ -1,0 +1,287 @@
+{
+  "basename": "tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0",
+  "name": "LeichteBasiskarte_v1.0.0",
+  "description": "A tileset showcasing all SwissTopo layers.",
+  "attribution": "© swisstopo",
+  "version": "v1.0.0",
+  "format": "pbf",
+  "minzoom": 0,
+  "maxzoom": 14,
+  "scale": 1,
+  "vector_layers": [
+    {
+      "id": "aerodrome_label",
+      "description": "[Aerodrome labels](http://wiki.openstreetmap.org/wiki/Tag:aeroway%3Daerodrome)",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "name": "String",
+        "name:latin": "String",
+        "name:de": "String",
+        "name:fr": "String",
+        "name:it": "String",
+        "name:rm": "String",
+        "class": "String",
+        "iata": "String",
+        "icao": "String"
+      }
+    },
+    {
+      "id": "aeroway",
+      "description": "Airport buildings are contained in the **building** layer but all\nother airport related polygons can be found in the **aeroway** layer.",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "class": "String"
+      }
+    },
+    {
+      "id": "area_name",
+      "description": "area_name layer for the LBM",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "class": "String",
+        "subclass": "String",
+        "name": "String",
+        "name:de": "String",
+        "name:fr": "String",
+        "name:it": "String",
+        "name:rm": "String",
+        "name:latin": "String"
+      }
+    },
+    {
+      "id": "boundary",
+      "description": "Contains administrative boundaries as linestrings.",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "admin_level": "Number",
+        "disputed": "Number",
+        "maritime": "Number"
+      }
+    },
+    {
+      "id": "building",
+      "description": "buildings including roofs without sidewalls",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "render_height": "Number",
+        "render_min_height": "Number"
+      }
+    },
+    {
+      "id": "building_ln",
+      "description": "building_line layer for the LBM",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "name": "String",
+        "name:latin": "String",
+        "name:de": "String",
+        "name:fr": "String",
+        "name:it": "String",
+        "name:rm": "String",
+        "class": "String"
+      }
+    },
+    {
+      "id": "construct",
+      "description": "manmade structures not suitable for the layer building.",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "class": "String"
+      }
+    },
+    {
+      "id": "contour_line",
+      "description": "contour lines",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "class": "String"
+      }
+    },
+    {
+      "id": "landcover",
+      "description": "Landcover is used to describe the physical material at the surface of the earth.",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "class": "String",
+        "subclass": "String"
+      }
+    },
+    {
+      "id": "landuse",
+      "description": "Landuse is used to describe use of land by humans.",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "class": "String"
+      }
+    },
+    {
+      "id": "mountain_peak",
+      "description": "peaks or other topographical landmarks.",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "name": "String",
+        "name:latin": "String",
+        "name:de": "String",
+        "name:fr": "String",
+        "name:it": "String",
+        "name:rm": "String",
+        "class": "String"
+      }
+    },
+    {
+      "id": "park",
+      "description": "The park layer contains parks from national park and protected areas. contains polygons for area and points for labelling",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "class": "String",
+        "name": "String",
+        "name:latin": "String",
+        "name:de": "String",
+        "name:fr": "String",
+        "name:it": "String",
+        "name:rm": "String"
+      }
+    },
+    {
+      "id": "place",
+      "description": "used to label places.",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "name": "String",
+        "name:latin": "String",
+        "name:de": "String",
+        "name:fr": "String",
+        "name:it": "String",
+        "name:rm": "String",
+        "class": "String",
+        "rank": "Number",
+        "capital": "Number",
+        "iso_a2": "String",
+        "code": "String",
+        "population": "Number"
+      }
+    },
+    {
+      "id": "poi",
+      "description": "LBM POIs",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "class": "String",
+        "subclass": "String",
+        "name": "String",
+        "name:de": "String",
+        "name:fr": "String",
+        "name:it": "String",
+        "name:rm": "String",
+        "name:latin": "String",
+        "direction": "Number"
+      }
+    },
+    {
+      "id": "spot_elevation",
+      "description": "spot elevation.",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "class": "String"
+      }
+    },
+    {
+      "id": "transportation",
+      "description": "**transportation** contains roads, railways, aerialways, and ferry lines.\nIt contains all roads from motorways to primary, secondary and\ntertiary roads to residential roads and\nfoot paths. Styling the roads is the most essential part of the map.",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "class": "String",
+        "subclass": "String",
+        "brunnel": "String",
+        "ramp": "Number",
+        "oneway": "Number",
+        "layer": "Number",
+        "surface": "String",
+        "sac_scale": "String",
+        "service": "String"
+      }
+    },
+    {
+      "id": "transportation_name",
+      "description": "Labeling geometry for transportation layer.",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "class": "String",
+        "subclass": "String",
+        "name": "String",
+        "name:de": "String",
+        "name:fr": "String",
+        "name:it": "String",
+        "name:rm": "String",
+        "name:latin": "String",
+        "ref": "String",
+        "ref_length": "Number",
+        "layer": "Number"
+      }
+    },
+    {
+      "id": "water",
+      "description": "Water polygons representing rivers and lakes but also artificial constructions such as pools",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "class": "String"
+      }
+    },
+    {
+      "id": "waterway",
+      "description": "waterway.",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "class": "String",
+        "name": "String",
+        "name:latin": "String",
+        "name:de": "String",
+        "name:fr": "String",
+        "name:it": "String",
+        "name:rm": "String",
+        "intermittent": "Number",
+        "width": "Number"
+      }
+    },
+    {
+      "id": "water_name",
+      "description": "The water_name layer contains centerlines for larger waterbodies and centerpoints for smaller waterbodies for labelling",
+      "minzoom": 0,
+      "maxzoom": 14,
+      "fields": {
+        "class": "String",
+        "name": "String",
+        "name:latin": "String",
+        "name:de": "String",
+        "name:fr": "String",
+        "name:it": "String",
+        "name:rm": "String"
+      }
+    }
+  ],
+  "profile": "mercator",
+  "scheme": "xyz",
+  "bounds": [5.9559, 45.818, 10.4921, 47.8084],
+  "center": [8.2, 46.8, 7],
+  "tilejson": "2.0.0",
+  "tiles": ["{*PROTOCOL*}://{*HOSTNAME*}{*BASEURL*}/tiles/pbf/{z}/{x}/{y}.pbf"]
+}

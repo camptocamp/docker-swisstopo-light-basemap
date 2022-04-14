@@ -10,19 +10,26 @@ RUN \
     apt-get install --assume-yes --no-install-recommends apt-utils && \
     apt-get install --assume-yes --no-install-recommends apt-transport-https && \
 	apt-get install --assume-yes --no-install-recommends wget unzip python python3-pip python3-dev python3-wheel python3-pkgconfig libgraphviz-dev libpq-dev binutils gcc g++ cython3 && \
-    apt-get clean
+	apt-get clean
 RUN wget --no-check-certificate https://github.com/mapbox/mbutil/archive/refs/heads/master.zip
 RUN unzip master.zip
 RUN wget --no-check-certificate https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
 RUN ./mbutil-master/mb-util --do_compression --image_format=pbf ch.swisstopo.leichte-basiskarte.vt.mbtiles /pbf
 
-FROM nginx:1.21
-ENV VECTOR_TILES_FQDN="http://localhost:8080"
-ENV VECTOR_TILES_BASEURL=""
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY default.conf /etc/nginx/conf.d/default.conf
+    # apt-get install --assume-yes --no-install-recommends gnupg ca-certificates && \
+    # wget -O - https://openresty.org/package/pubkey.gpg | apt-key add - && \
+    # echo "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/openresty.list && \
+    # apt-get update && \
+    # apt-get install --assume-yes --no-install-recommends openresty && \
+
+
+#FROM nginx:1.21
+FROM openresty/openresty:1.19.9.1-10-alpine-fat
 COPY tiles /usr/share/nginx/html/tiles
-RUN chmod 777 /usr/share/nginx/html/tiles
-RUN chmod 777 -R /var/cache/nginx/
 COPY --from=builder /pbf /usr/share/nginx/html/tiles/pbf
-COPY 40-eval-tile-templates.sh /docker-entrypoint.d
+RUN opm get bungle/lua-resty-template
+COPY default.conf /etc/nginx/conf.d/default.conf
+#RUN chmod 777 -R /var/cache/nginx/
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY templates /usr/share/nginx/html/
+COPY lua /usr/local/openresty/nginx/lua
