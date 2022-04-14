@@ -23,6 +23,12 @@ if template_file_name == "" then
     template_file_name = "index.html"
 end
 
+wmts_hillshade_url = os.getenv("SWISSTOPO_WMTS_HILLSHADE_URL")
+if wmts_hillshade_url == nil then
+    wmts_hillshade_url = "https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.leichte-basiskarte_reliefschattierung/default/current/3857/{z}/{x}/{y}.png"
+end
+
+
 template.render(
     template_file_name, {
         PROTOCOL = proto,

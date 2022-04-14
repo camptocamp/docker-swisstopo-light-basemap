@@ -19,7 +19,7 @@
     },
     "relief_shading": {
       "type": "raster",
-      "tiles": ["${GEOSERVER_WMTS_HILLSHADE_URL}"],
+      "tiles": ["{*wmts_hillshade_url*}"],
       "tileSize": 256,
       "minzoom": 0,
       "maxzoom": 22
