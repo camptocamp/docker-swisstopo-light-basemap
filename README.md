@@ -2,7 +2,7 @@
 
 This docker image is a standalone MVT server for Swisstopo "leichte-basiskarte" MVT product.
 
-The image is based on [reopenresty](https://openresty.org/en/) for the dynamic `style.json` and `tiles.json` rendering.
+The image is based on [openresty](https://openresty.org/en/) for the dynamic `style.json` and `tiles.json` rendering.
 
 ## Building
 
