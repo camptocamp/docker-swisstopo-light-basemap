@@ -1,6 +1,5 @@
 
 local template = require "resty.template"
--- local template_string = ngx.location.capture(ngx.var.templateFile)
 
 hostname = os.getenv("VECTORTILES_FQDN")
 if hostname == nil then
@@ -38,9 +37,12 @@ end
 wmts_hillshade_url = os.getenv("SWISSTOPO_WMTS_HILLSHADE_URL")
 if wmts_hillshade_url == nil then
     wmts_hillshade_url = "https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.leichte-basiskarte_reliefschattierung/default/current/3857/{z}/{x}/{y}.png"
+else 
+    -- for example: "/geoserver/gwc/service/wmts/rest/flicc:ch.swisstopo.leichte-basiskarte_reliefschattierung/raster/EPSG:3857/EPSG:3857:{z}/{y}/{x}?format=image/png"
+    wmts_hillshade_url = proto .. "://" .. hostname .. baseurl .. wmts_hillshade_url
 end
 
-
+-- cache-key = proto .. hostname .. baseurl
 template.render(
     template_file_name, {
         PROTOCOL = proto,
@@ -48,5 +50,5 @@ template.render(
         BASEURL = baseurl,
         SWISSTOPO_WMTS_HILLSHADE_URL = wmts_hillshade_url
     },
-    "no-cache"
+    proto .. hostname .. baseurl
     )
