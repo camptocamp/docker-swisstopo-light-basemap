@@ -2,20 +2,32 @@
 local template = require "resty.template"
 -- local template_string = ngx.location.capture(ngx.var.templateFile)
 
-
-hostname = ngx.req.get_headers()['X-Forwarded-Host']
+hostname = os.getenv("VECTORTILES_FQDN")
+if hostname == nil then
+    hostname = ngx.req.get_headers()['X-Forwarded-Host']
+end
 if hostname == nil then
     hostname = ngx.req.get_headers()['Host']
 end
 
-proto = ngx.req.get_headers()['X-Forwarded-Proto']
+proto = os.getenv("VECTORTILES_PROTOCOL")
+if proto == nil then
+    proto = ngx.req.get_headers()['X-Forwarded-Proto']
+end
 if proto == nil then
     proto = "http"
 end
 
-baseurl = ngx.req.get_headers()['Forwarded-Path']
+baseurl = os.getenv("VECTORTILES_BASEURL")
+if baseurl == nil then
+    baseurl = ngx.req.get_headers()['Forwarded-Path']
+end
 if baseurl == nil then
     baseurl = ""
+end
+-- sanitize a bit
+if string.sub(baseurl,string.len(baseurl))=="/" then
+    baseurl = string.sub(baseurl,0, string.len(baseurl)-1)
 end
 
 template_file_name = ngx.var.templateFile
@@ -33,7 +45,8 @@ template.render(
     template_file_name, {
         PROTOCOL = proto,
         HOSTNAME = hostname,
-        BASEURL = baseurl
+        BASEURL = baseurl,
+        SWISSTOPO_WMTS_HILLSHADE_URL = wmts_hillshade_url
     },
     "no-cache"
     )

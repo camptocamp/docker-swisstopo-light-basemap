@@ -30,6 +30,6 @@ COPY --from=builder /pbf /usr/share/nginx/html/tiles/pbf
 RUN opm get bungle/lua-resty-template
 COPY default.conf /etc/nginx/conf.d/default.conf
 #RUN chmod 777 -R /var/cache/nginx/
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 COPY templates /usr/share/nginx/html/
 COPY lua /usr/local/openresty/nginx/lua

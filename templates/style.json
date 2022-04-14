@@ -19,7 +19,7 @@
     },
     "relief_shading": {
       "type": "raster",
-      "tiles": ["{*wmts_hillshade_url*}"],
+      "tiles": ["{*SWISSTOPO_WMTS_HILLSHADE_URL*}"],
       "tileSize": 256,
       "minzoom": 0,
       "maxzoom": 22
