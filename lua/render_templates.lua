@@ -23,8 +23,11 @@ if template_file_name == "" then
     template_file_name = "index.html"
 end
 
-template.render(template_file_name, {
-    PROTOCOL = proto,
-    HOSTNAME = hostname,
-    BASEURL = baseurl
-})
+template.render(
+    template_file_name, {
+        PROTOCOL = proto,
+        HOSTNAME = hostname,
+        BASEURL = baseurl
+    },
+    "no-cache"
+    )
