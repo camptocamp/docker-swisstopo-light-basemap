@@ -16,11 +16,11 @@ def test_get_tileset_with_proxy(connection):
     """test the WFS connection -- cnx"""
     answer = connection.get_json(
         url="tiles.json",
-        headers = {
-            "X-forwarded-host" : "test.com",
-            "X-Forwarded-Proto" : "https",
-            "Forwarded-Path" : "/some/url"
-            }
+        headers={
+            "X-forwarded-host": "test.com",
+            "X-Forwarded-Proto": "https",
+            "Forwarded-Path": "/some/url",
+        },
         cache_expected=CacheExpected.DONT_CARE,
         cors=True,
     )
