@@ -1,4 +1,4 @@
-# docker-nginx-mvt
+# docker-swisstopo-light-basemap
 
 This docker image is a standalone MVT server for Swisstopo "leichte-basiskarte" MVT product.
 
