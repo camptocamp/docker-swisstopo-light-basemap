@@ -8,8 +8,9 @@ def test_get_style_no_proxy(connection):
         cache_expected=CacheExpected.DONT_CARE,
         cors=True,
     )
-
-    assert answer.sources.swissmaptiles.url == "http://mvt:8080/tiles/tiles.json"
+    assert (
+        answer["sources"]["swissmaptiles"]["url"] == "http://mvt:8080/tiles/tiles.json"
+    )
 
 
 def test_get_style_with_proxy(connection):
@@ -26,5 +27,6 @@ def test_get_style_with_proxy(connection):
     )
 
     assert (
-        answer.sources.swissmaptiles.url == "https://test.com/some/url/tiles/tiles.json"
+        answer["sources"]["swissmaptiles"]["url"]
+        == "https://test.com/some/url/tiles/tiles.json"
     )
