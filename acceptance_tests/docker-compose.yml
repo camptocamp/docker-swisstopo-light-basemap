@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+
+  mvt:
+    image: "camptocamp/swisstopo-light-basemap:${DOCKER_TAG}"
+    ports:
+      - 8080:8080
+
+  acceptance:
+    build: .
+    environment:
+      BASE_URL: 'http://mvt:8080/'
