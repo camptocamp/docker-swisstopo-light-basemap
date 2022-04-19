@@ -50,5 +50,5 @@ template.render(
         BASEURL = baseurl,
         SWISSTOPO_WMTS_HILLSHADE_URL = wmts_hillshade_url
     },
-    proto .. hostname .. baseurl
+    "no-cache"
     )
