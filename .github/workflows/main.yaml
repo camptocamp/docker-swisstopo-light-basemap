@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - master
+      - v1.0.0
+      - v2.0.0
     tags:
       - "*"
   pull_request:
