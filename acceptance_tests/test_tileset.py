@@ -9,7 +9,7 @@ def test_get_tileset_no_proxy(connection):
         cors=True,
     )
 
-    assert answer["tiles"][0] == "http://mvt:8080/tiles/pbf/{z}/{x}/{y}.pbf"
+    assert answer["tiles"][0] == "http://mvt:8080/tiles/pbf/basemap/{z}/{x}/{y}.pbf"
 
 
 def test_get_tileset_with_proxy(connection):
@@ -25,4 +25,7 @@ def test_get_tileset_with_proxy(connection):
         cors=True,
     )
 
-    assert answer["tiles"][0] == "https://test.com/some/url/tiles/pbf/{z}/{x}/{y}.pbf"
+    assert (
+        answer["tiles"][0]
+        == "https://test.com/some/url/tiles/pbf/basemap/{z}/{x}/{y}.pbf"
+    )
