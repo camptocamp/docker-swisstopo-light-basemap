@@ -1,9 +1,9 @@
 {
-  "basename": "tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0",
-  "name": "LeichteBasiskarte_v1.0.0",
+  "basename": "tiles/ch.swisstopo.leichte-basiskarte.vt/v2.0.0",
+  "name": "LeichteBasiskarte_v2.0.0",
   "description": "A tileset showcasing all SwissTopo layers.",
   "attribution": "© swisstopo",
-  "version": "v1.0.0",
+  "version": "v2.0.0",
   "format": "pbf",
   "minzoom": 0,
   "maxzoom": 14,
@@ -37,7 +37,7 @@
     },
     {
       "id": "area_name",
-      "description": "area_name layer for the LBM",
+      "description": "area_name layer for the LBM, contains points and lines for labelling areas.",
       "minzoom": 0,
       "maxzoom": 14,
       "fields": {
@@ -58,6 +58,8 @@
       "maxzoom": 14,
       "fields": {
         "admin_level": "Number",
+        "adm4_l": "String",
+        "adm4_r": "String",
         "disputed": "Number",
         "maritime": "Number"
       }
@@ -136,7 +138,8 @@
         "name:fr": "String",
         "name:it": "String",
         "name:rm": "String",
-        "class": "String"
+        "class": "String",
+        "rank": "Number"
       }
     },
     {
@@ -214,7 +217,8 @@
         "layer": "Number",
         "surface": "String",
         "sac_scale": "String",
-        "service": "String"
+        "service": "String",
+        "is_route": "Number"
       }
     },
     {
@@ -225,6 +229,7 @@
       "fields": {
         "class": "String",
         "subclass": "String",
+        "brunnel": "String",
         "name": "String",
         "name:de": "String",
         "name:fr": "String",
@@ -233,7 +238,8 @@
         "name:latin": "String",
         "ref": "String",
         "ref_length": "Number",
-        "layer": "Number"
+        "layer": "Number",
+        "is_route": "Number"
       }
     },
     {
@@ -247,7 +253,7 @@
     },
     {
       "id": "waterway",
-      "description": "waterway.",
+      "description": "Lines of waterways or outlines of waterbodies. Underground waterways are not included.",
       "minzoom": 0,
       "maxzoom": 14,
       "fields": {
@@ -264,7 +270,7 @@
     },
     {
       "id": "water_name",
-      "description": "The water_name layer contains centerlines for larger waterbodies and centerpoints for smaller waterbodies for labelling",
+      "description": "The water_name layer contains points to label waterbodies.",
       "minzoom": 0,
       "maxzoom": 14,
       "fields": {
@@ -274,7 +280,9 @@
         "name:de": "String",
         "name:fr": "String",
         "name:it": "String",
-        "name:rm": "String"
+        "name:rm": "String",
+        "direction": "Number",
+        "size": "Number"
       }
     }
   ],
@@ -283,5 +291,7 @@
   "bounds": [5.9559, 45.818, 10.4921, 47.8084],
   "center": [8.2, 46.8, 7],
   "tilejson": "2.0.0",
-  "tiles": ["{*PROTOCOL*}://{*HOSTNAME*}{*BASEURL*}/tiles/pbf/{z}/{x}/{y}.pbf"]
+  "tiles": [
+    "{*PROTOCOL*}://{*HOSTNAME*}{*BASEURL*}/tiles/pbf/basemap/{z}/{x}/{y}.pbf"
+  ]
 }

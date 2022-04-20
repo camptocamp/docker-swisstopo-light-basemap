@@ -14,8 +14,8 @@ RUN \
 	apt-get clean
 RUN wget --no-check-certificate https://github.com/mapbox/mbutil/archive/refs/heads/master.zip
 RUN unzip master.zip
-RUN wget --no-check-certificate https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
-RUN ./mbutil-master/mb-util --do_compression --image_format=pbf ch.swisstopo.leichte-basiskarte.vt.mbtiles /pbf
+RUN wget --no-check-certificate https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v2.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
+RUN ./mbutil-master/mb-util --do_compression --image_format=pbf ch.swisstopo.leichte-basiskarte.vt.mbtiles /pbf/basemap
 
 # Runtime image
 FROM openresty/openresty:1.19.9.1-10-alpine-fat
