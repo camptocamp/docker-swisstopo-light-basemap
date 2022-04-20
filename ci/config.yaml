@@ -16,8 +16,6 @@ version:
   branch_to_version_re:
     - from: master
       to: unstable
-    - from: v2.0.0
-      to: latest
 
 publish:
   docker:
