@@ -632,7 +632,7 @@
       "source-layer": "contour_line",
       "minzoom": 16,
       "layout": {
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": 12,
         "text-field": "{ele} ",
         "visibility": "visible",
@@ -695,7 +695,7 @@
       "source-layer": "contour_line",
       "minzoom": 16,
       "layout": {
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": 12,
         "text-field": "{ele} ",
         "visibility": "visible",
@@ -758,7 +758,7 @@
       "source-layer": "contour_line",
       "minzoom": 16,
       "layout": {
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": 12,
         "text-field": "{ele} ",
         "visibility": "visible",
@@ -821,7 +821,7 @@
       "source-layer": "contour_line",
       "minzoom": 14,
       "layout": {
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": [
           "interpolate",
           ["exponential", 2],
@@ -896,7 +896,7 @@
       "source-layer": "contour_line",
       "minzoom": 14,
       "layout": {
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": [
           "interpolate",
           ["exponential", 2],
@@ -971,7 +971,7 @@
       "source-layer": "contour_line",
       "minzoom": 14,
       "layout": {
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": [
           "interpolate",
           ["exponential", 2],
@@ -2764,7 +2764,7 @@
       "minzoom": 12,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 14, 10.5, 18, 13],
         "icon-image": [
           "case",
@@ -4148,7 +4148,7 @@
       "minzoom": 14,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Regular"],
+        "text-font": ["FrutigerNeueRegular"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 14, 10.5, 18, 13],
         "icon-image": [
           "match",
@@ -4207,7 +4207,7 @@
       "source-layer": "waterway",
       "minzoom": 9,
       "layout": {
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": [
           "interpolate",
           ["exponential", 1.5],
@@ -4275,7 +4275,7 @@
       "source-layer": "transportation_name",
       "minzoom": 13,
       "layout": {
-        "text-font": ["Frutiger Neue Condensed Regular"],
+        "text-font": ["FrutigerNeueCondensedRegular"],
         "text-size": [
           "interpolate",
           ["exponential", 1.5],
@@ -4407,7 +4407,7 @@
       "minzoom": 11,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Condensed Bold"],
+        "text-font": ["FrutigerNeueCondensedBold"],
         "text-size": 10.5,
         "icon-image": "box_white_grey_casing_{ref_length}",
         "text-field": ["get", "ref"],
@@ -4456,7 +4456,7 @@
       "source-layer": "area_name",
       "minzoom": 14,
       "layout": {
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 10, 11, 16, 20],
         "text-field": "{name:latin}",
         "symbol-spacing": {
@@ -4491,7 +4491,7 @@
       "source-layer": "area_name",
       "minzoom": 12,
       "layout": {
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 10, 11, 16, 20],
         "text-field": "{name:latin}",
         "symbol-spacing": {
@@ -4536,7 +4536,7 @@
       "minzoom": 15,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Condensed Regular"],
+        "text-font": ["FrutigerNeueCondensedRegular"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 14, 12, 18, 18],
         "icon-image": [
           "match",
@@ -4693,7 +4693,7 @@
       "minzoom": 13,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Condensed Regular"],
+        "text-font": ["FrutigerNeueCondensedRegular"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 14, 12, 18, 18],
         "icon-image": [
           "step",
@@ -4969,7 +4969,7 @@
       "maxzoom": 24,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": [
           "interpolate",
           ["linear"],
@@ -5065,7 +5065,7 @@
       "maxzoom": 24,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": [
           "interpolate",
           ["linear"],
@@ -5165,7 +5165,7 @@
       "maxzoom": 24,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": [
           "interpolate",
           ["linear"],
@@ -5265,7 +5265,7 @@
       "maxzoom": 24,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": [
           "interpolate",
           ["linear"],
@@ -5365,7 +5365,7 @@
       "maxzoom": 24,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": [
           "interpolate",
           ["linear"],
@@ -5465,7 +5465,7 @@
       "maxzoom": 24,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Condensed Medium"],
+        "text-font": ["FrutigerNeueCondensedMedium"],
         "text-size": [
           "interpolate",
           ["cubic-bezier", 0.5, 0.1, 0.7, 1],
@@ -5552,7 +5552,7 @@
       "minzoom": 14,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Condensed Regular"],
+        "text-font": ["FrutigerNeueCondensedRegular"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 13, 13, 18, 20],
         "icon-image": [
           "match",
@@ -5615,7 +5615,7 @@
       "maxzoom": 24,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Condensed Medium"],
+        "text-font": ["FrutigerNeueCondensedMedium"],
         "text-size": [
           "interpolate",
           ["cubic-bezier", 0.5, 0.1, 0.7, 1],
@@ -5701,7 +5701,7 @@
       "minzoom": 11,
       "maxzoom": 24,
       "layout": {
-        "text-font": ["Frutiger Neue Condensed Regular"],
+        "text-font": ["FrutigerNeueCondensedRegular"],
         "text-size": [
           "interpolate",
           ["linear"],
@@ -5743,7 +5743,7 @@
       "maxzoom": 18,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Condensed Medium"],
+        "text-font": ["FrutigerNeueCondensedMedium"],
         "text-size": [
           "interpolate",
           ["cubic-bezier", 0.5, 0.1, 0.7, 1],
@@ -5808,7 +5808,7 @@
       "minzoom": 11,
       "layout": {
         "icon-size": ["interpolate", ["linear"], ["zoom"], 11, 0.7, 14, 1],
-        "text-font": ["Frutiger Neue Condensed Regular"],
+        "text-font": ["FrutigerNeueCondensedRegular"],
         "text-size": [
           "interpolate",
           ["linear"],
@@ -5864,7 +5864,7 @@
       "maxzoom": 24,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": [
           "interpolate",
           ["linear"],
@@ -5977,7 +5977,7 @@
       "maxzoom": 16,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Condensed Bold"],
+        "text-font": ["FrutigerNeueCondensedBold"],
         "text-size": [
           "interpolate",
           ["cubic-bezier", 0.5, 0.1, 0.7, 1],
@@ -6040,7 +6040,7 @@
       "minzoom": 7,
       "maxzoom": 24,
       "layout": {
-        "text-font": ["Frutiger Neue Italic"],
+        "text-font": ["FrutigerNeueItalic"],
         "text-size": [
           "interpolate",
           ["linear"],
@@ -6191,7 +6191,7 @@
       "source-layer": "park",
       "minzoom": 8,
       "layout": {
-        "text-font": ["Frutiger Neue Regular"],
+        "text-font": ["FrutigerNeueRegular"],
         "text-size": [
           "interpolate",
           ["cubic-bezier", 0.5, 0.1, 0.7, 1],
@@ -6224,7 +6224,7 @@
       "source-layer": "area_name",
       "minzoom": 11,
       "layout": {
-        "text-font": ["Frutiger Neue Regular"],
+        "text-font": ["FrutigerNeueRegular"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 10, 14, 16, 23],
         "text-field": "{name:latin}",
         "symbol-spacing": {
@@ -6261,7 +6261,7 @@
       "maxzoom": 14,
       "layout": {
         "icon-size": 1,
-        "text-font": ["Frutiger Neue Condensed Bold"],
+        "text-font": ["FrutigerNeueCondensedBold"],
         "text-size": [
           "interpolate",
           ["cubic-bezier", 0.5, 0.1, 0.7, 1],
@@ -6325,7 +6325,7 @@
       "minzoom": 0,
       "maxzoom": 7,
       "layout": {
-        "text-font": ["Frutiger Neue Condensed Regular"],
+        "text-font": ["FrutigerNeueCondensedRegular"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 1, 12, 6, 16],
         "text-field": "{name:latin}",
         "visibility": "visible",
@@ -6350,7 +6350,7 @@
       "minzoom": 0,
       "maxzoom": 7,
       "layout": {
-        "text-font": ["Frutiger Neue Condensed Regular"],
+        "text-font": ["FrutigerNeueCondensedRegular"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 1, 12, 6, 16],
         "text-field": "{name:latin}",
         "visibility": "visible",
