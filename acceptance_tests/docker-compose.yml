@@ -1,13 +1,13 @@
-version: '2'
+version: "2"
 
 services:
-
   mvt:
     image: "camptocamp/swisstopo-light-basemap:${DOCKER_TAG}"
+    user: "1000:1000"
     ports:
       - 8080:8080
 
   acceptance:
     build: .
     environment:
-      BASE_URL: 'http://mvt:8080/'
+      BASE_URL: "http://mvt:8080/"
