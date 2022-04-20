@@ -10,13 +10,13 @@ The image is based on [openresty](https://openresty.org/en/) for the dynamic `st
 
 ## Building the image
 
-`docker build -t camptocamp/nginx-mvt:latest .`
+`docker build -t camptocamp/swisstopo-light-basemap:latest .`
 
 ## Run the server
 
 ### Default
 
-`docker run -d -p 8080:8080 --name mvt camptocamp/nginx-mvt:latest`
+`docker run -d -p 8080:8080 --name mvt camptocamp/swisstopo-light-basemap:latest`
 
 ### Parameters of the image
 
@@ -41,5 +41,5 @@ The templates can render any kind of url, the idea is that this server should be
 docker run -d -p 8080:8080 \
   -e "SWISSTOPO_WMTS_HILLSHADE_URL=/geoserver/gwc/service/wmts/rest/workspace:ch.swisstopo.leichte-basiskarte_reliefschattierung/raster/EPSG:3857/EPSG:3857:{z}/{y}/{x}?format=image/png" \
   -e "VECTORTILES_FQDN=test.ch" \
-   --name mvt camptocamp/nginx-mvt:latest
+   --name mvt camptocamp/swisstopo-light-basemap:latest
 ```
