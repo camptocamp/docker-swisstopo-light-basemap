@@ -16,6 +16,7 @@ jobs:
       matrix:
         branch:
           - master
+          - v2.0.0
 
     steps:
       - uses: actions/checkout@v2
