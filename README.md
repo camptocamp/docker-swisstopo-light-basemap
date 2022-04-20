@@ -4,7 +4,11 @@ This docker image is a standalone MVT server for Swisstopo "leichte-basiskarte" 
 
 The image is based on [openresty](https://openresty.org/en/) for the dynamic `style.json` and `tiles.json` rendering.
 
-## Building
+## Pulling the image
+
+`docker pull camptocamp/swisstopo-light-basemap:latest`
+
+## Building the image
 
 `docker build -t camptocamp/nginx-mvt:latest .`
 
