@@ -1,18 +1,15 @@
 {
   "version": 8,
-  "id": "ef129acf-87b7-4c4a-bcec-db5978eaf6b9",
-  "name": "lbm_v2.0.0_ch",
+  "id": "7d0ba28e-7530-40cc-9890-4442157b751f",
+  "name": "lbm_v2.0.0_ch_hillshade_v0.0.3",
   "sources": {
     "swissmaptiles": {
       "url": "{*PROTOCOL*}://{*HOSTNAME*}{*BASEURL*}/tiles/tiles.json",
       "type": "vector"
     },
-    "relief_shading": {
-      "type": "raster",
-      "tiles": ["{*SWISSTOPO_WMTS_HILLSHADE_URL*}"],
-      "tileSize": 256,
-      "minzoom": 0,
-      "maxzoom": 22
+    "basiskarte_hillshade_v0.0.3": {
+      "url": "{*PROTOCOL*}://{*HOSTNAME*}{*BASEURL*}/tiles/tileset_v3.0.0_beta.json",
+      "type": "vector"
     }
   },
   "layers": [
@@ -27,47 +24,75 @@
       }
     },
     {
-      "id": "relief_shading",
-      "type": "raster",
-      "source": "relief_shading",
+      "id": "hillshade_v0.0.3_grey",
+      "type": "fill",
+      "source": "basiskarte_hillshade_v0.0.3",
+      "source-layer": "hillshade",
       "layout": {
         "visibility": "visible"
       },
       "paint": {
-        "raster-opacity": {
+        "fill-color": [
+          "match",
+          ["get", "subclass"],
+          1,
+          "rgb(194, 205, 213)",
+          2,
+          "rgb(197, 208, 216)",
+          3,
+          "rgb(201, 211, 218)",
+          4,
+          "rgb(205, 214, 221)",
+          5,
+          "rgb(209, 217, 224)",
+          6,
+          "rgb(213, 220, 226)",
+          7,
+          "rgb(217, 224, 229)",
+          8,
+          "rgb(220, 227, 231)",
+          9,
+          "rgb(224, 230, 234)",
+          10,
+          "rgb(228, 233, 237)",
+          11,
+          "rgb(232, 236, 239)",
+          12,
+          "rgb(236, 239, 242)",
+          13,
+          "rgb(240, 242, 245)",
+          14,
+          "rgb(243, 246, 247)",
+          15,
+          "rgb(247, 249, 250)",
+          "rgb(252, 252, 253)"
+        ],
+        "fill-opacity": 1
+      },
+      "filter": ["all", ["==", "class", "grey"]]
+    },
+    {
+      "id": "hillshade_v0.0.3_yellow",
+      "type": "fill",
+      "source": "basiskarte_hillshade_v0.0.3",
+      "source-layer": "hillshade",
+      "paint": {
+        "fill-color": "rgba(255, 255, 0, 1)",
+        "fill-opacity": {
           "stops": [
-            [15.5, 1],
-            [17, 0.6]
+            [11, 0.01],
+            [14, 0.015]
           ]
-        },
-        "raster-brightness-min": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          6,
-          0,
-          12,
-          0.25
-        ],
-        "raster-saturation": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          6,
-          -0.5,
-          12,
-          -0.2
-        ],
-        "raster-contrast": ["interpolate", ["linear"], ["zoom"], 6, 0.1, 12, 0],
-        "raster-resampling": "nearest"
-      }
+        }
+      },
+      "filter": ["all", ["==", "class", "yellow"]]
     },
     {
       "id": "contour_line",
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "contour_line",
-      "minzoom": 13,
+      "minzoom": 13.0,
       "layout": {
         "visibility": "visible"
       },
@@ -149,7 +174,7 @@
       "type": "fill",
       "source": "swissmaptiles",
       "source-layer": "landcover",
-      "minzoom": 5,
+      "minzoom": 5.0,
       "layout": {
         "visibility": "visible"
       },
@@ -216,7 +241,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "landcover",
-      "minzoom": 10,
+      "minzoom": 10.0,
       "layout": {
         "visibility": "visible"
       },
@@ -328,7 +353,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "waterway",
-      "minzoom": 12,
+      "minzoom": 12.0,
       "layout": {
         "visibility": "visible"
       },
@@ -427,7 +452,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "waterway",
-      "minzoom": 7,
+      "minzoom": 7.0,
       "layout": {
         "visibility": "visible"
       },
@@ -559,7 +584,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "contour_line",
-      "minzoom": 13,
+      "minzoom": 13.0,
       "layout": {
         "visibility": "visible"
       },
@@ -630,7 +655,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "contour_line",
-      "minzoom": 16,
+      "minzoom": 16.0,
       "layout": {
         "text-font": ["FrutigerNeueItalic"],
         "text-size": 12,
@@ -693,7 +718,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "contour_line",
-      "minzoom": 16,
+      "minzoom": 16.0,
       "layout": {
         "text-font": ["FrutigerNeueItalic"],
         "text-size": 12,
@@ -756,7 +781,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "contour_line",
-      "minzoom": 16,
+      "minzoom": 16.0,
       "layout": {
         "text-font": ["FrutigerNeueItalic"],
         "text-size": 12,
@@ -819,7 +844,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "contour_line",
-      "minzoom": 14,
+      "minzoom": 14.0,
       "layout": {
         "text-font": ["FrutigerNeueItalic"],
         "text-size": [
@@ -894,7 +919,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "contour_line",
-      "minzoom": 14,
+      "minzoom": 14.0,
       "layout": {
         "text-font": ["FrutigerNeueItalic"],
         "text-size": [
@@ -969,7 +994,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "contour_line",
-      "minzoom": 14,
+      "minzoom": 14.0,
       "layout": {
         "text-font": ["FrutigerNeueItalic"],
         "text-size": [
@@ -1070,7 +1095,7 @@
       "type": "fill",
       "source": "swissmaptiles",
       "source-layer": "landcover",
-      "minzoom": 13,
+      "minzoom": 13.0,
       "paint": {
         "fill-opacity": [
           "interpolate",
@@ -1092,7 +1117,7 @@
       "type": "fill",
       "source": "swissmaptiles",
       "source-layer": "landcover",
-      "minzoom": 13,
+      "minzoom": 13.0,
       "paint": {
         "fill-color": "#000000",
         "fill-opacity": [
@@ -1116,7 +1141,7 @@
       "type": "fill",
       "source": "swissmaptiles",
       "source-layer": "landcover",
-      "minzoom": 13,
+      "minzoom": 13.0,
       "paint": {
         "fill-opacity": [
           "interpolate",
@@ -1138,7 +1163,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "park",
-      "minzoom": 7,
+      "minzoom": 7.0,
       "paint": {
         "line-color": "rgba(171, 197, 159, 1)",
         "line-width": [
@@ -1173,7 +1198,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "boundary",
-      "minzoom": 0,
+      "minzoom": 0.0,
       "layout": {
         "line-cap": "square",
         "line-join": "miter",
@@ -1221,7 +1246,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "boundary",
-      "minzoom": 0,
+      "minzoom": 0.0,
       "layout": {
         "line-cap": ["literal", "round"],
         "line-join": ["literal", "miter"],
@@ -1268,7 +1293,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 8,
+      "minzoom": 8.0,
       "layout": {
         "line-cap": "butt",
         "line-join": "miter",
@@ -1415,7 +1440,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 7,
+      "minzoom": 7.0,
       "layout": {
         "line-cap": "butt",
         "line-join": "miter",
@@ -1564,7 +1589,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 6,
+      "minzoom": 6.0,
       "layout": {
         "line-cap": "butt",
         "line-join": "miter",
@@ -1611,7 +1636,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "construct",
-      "minzoom": 14,
+      "minzoom": 14.0,
       "paint": {
         "line-blur": 0.4,
         "line-color": "hsl(220, 10%, 67%)",
@@ -1635,7 +1660,7 @@
       "type": "fill",
       "source": "swissmaptiles",
       "source-layer": "construct",
-      "minzoom": 13,
+      "minzoom": 13.0,
       "paint": {
         "fill-color": [
           "interpolate",
@@ -1681,7 +1706,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "aeroway",
-      "minzoom": 11,
+      "minzoom": 11.0,
       "layout": {
         "line-cap": "round",
         "line-join": "round",
@@ -1711,7 +1736,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "aeroway",
-      "minzoom": 11,
+      "minzoom": 11.0,
       "layout": {
         "line-cap": "butt",
         "line-join": "miter",
@@ -1742,7 +1767,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 14,
+      "minzoom": 14.0,
       "layout": {
         "line-cap": "butt",
         "line-join": "bevel",
@@ -1800,7 +1825,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 11,
+      "minzoom": 11.0,
       "layout": {
         "line-cap": "butt",
         "line-join": "bevel",
@@ -1862,7 +1887,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "building_ln",
-      "minzoom": 13,
+      "minzoom": 13.0,
       "paint": {
         "line-blur": 0.4,
         "line-color": [
@@ -1887,7 +1912,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 7,
+      "minzoom": 7.0,
       "layout": {
         "line-cap": "round",
         "line-join": "round",
@@ -2184,7 +2209,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 7,
+      "minzoom": 7.0,
       "layout": {
         "line-cap": "round",
         "line-join": "round",
@@ -2371,7 +2396,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "aeroway",
-      "minzoom": 11,
+      "minzoom": 11.0,
       "layout": {
         "line-cap": "butt",
         "line-join": "miter",
@@ -2408,7 +2433,7 @@
       "type": "fill",
       "source": "swissmaptiles",
       "source-layer": "aeroway",
-      "minzoom": 11,
+      "minzoom": 11.0,
       "layout": {
         "visibility": "visible"
       },
@@ -2434,7 +2459,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 9,
+      "minzoom": 9.0,
       "layout": {
         "visibility": "visible"
       },
@@ -2478,7 +2503,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 12,
+      "minzoom": 12.0,
       "layout": {
         "visibility": "visible"
       },
@@ -2515,7 +2540,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 8,
+      "minzoom": 8.0,
       "layout": {
         "visibility": "visible"
       },
@@ -2651,7 +2676,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "spot_elevation",
-      "minzoom": 14,
+      "minzoom": 14.0,
       "layout": {
         "icon-size": 1,
         "text-font": [],
@@ -2712,7 +2737,7 @@
       "type": "fill",
       "source": "swissmaptiles",
       "source-layer": "building",
-      "minzoom": 13,
+      "minzoom": 13.0,
       "layout": {
         "visibility": "visible"
       },
@@ -2736,7 +2761,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "building",
-      "minzoom": 15,
+      "minzoom": 15.0,
       "layout": {
         "visibility": "visible"
       },
@@ -2761,7 +2786,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "spot_elevation",
-      "minzoom": 12,
+      "minzoom": 12.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueItalic"],
@@ -2819,7 +2844,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 7,
+      "minzoom": 7.0,
       "layout": {
         "line-cap": "butt",
         "line-join": "round",
@@ -3061,7 +3086,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 7,
+      "minzoom": 7.0,
       "layout": {
         "line-cap": "butt",
         "line-join": "round",
@@ -3247,7 +3272,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 14,
+      "minzoom": 14.0,
       "layout": {
         "line-cap": "butt",
         "line-join": "round",
@@ -3295,7 +3320,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 11,
+      "minzoom": 11.0,
       "layout": {
         "line-cap": "butt",
         "line-join": "bevel",
@@ -3344,7 +3369,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 10,
+      "minzoom": 10.0,
       "layout": {
         "line-cap": "round",
         "visibility": "visible"
@@ -3485,7 +3510,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 7,
+      "minzoom": 7.0,
       "layout": {
         "line-cap": "butt",
         "line-join": "round",
@@ -3721,7 +3746,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 7,
+      "minzoom": 7.0,
       "layout": {
         "line-cap": "butt",
         "line-join": "round",
@@ -3907,7 +3932,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 14,
+      "minzoom": 14.0,
       "layout": {
         "line-cap": "butt",
         "line-join": "round",
@@ -3955,7 +3980,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 11,
+      "minzoom": 11.0,
       "layout": {
         "line-cap": "butt",
         "line-join": "bevel",
@@ -4004,7 +4029,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 10,
+      "minzoom": 10.0,
       "layout": {
         "line-cap": "round",
         "visibility": "visible"
@@ -4145,7 +4170,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "spot_elevation",
-      "minzoom": 14,
+      "minzoom": 14.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueRegular"],
@@ -4205,7 +4230,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "waterway",
-      "minzoom": 9,
+      "minzoom": 9.0,
       "layout": {
         "text-font": ["FrutigerNeueItalic"],
         "text-size": [
@@ -4273,7 +4298,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "transportation_name",
-      "minzoom": 13,
+      "minzoom": 13.0,
       "layout": {
         "text-font": ["FrutigerNeueCondensedRegular"],
         "text-size": [
@@ -4356,7 +4381,7 @@
       "type": "line",
       "source": "swissmaptiles",
       "source-layer": "transportation",
-      "minzoom": 12,
+      "minzoom": 12.0,
       "layout": {
         "visibility": "visible"
       },
@@ -4404,7 +4429,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "transportation_name",
-      "minzoom": 11,
+      "minzoom": 11.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueCondensedBold"],
@@ -4454,7 +4479,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "area_name",
-      "minzoom": 14,
+      "minzoom": 14.0,
       "layout": {
         "text-font": ["FrutigerNeueItalic"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 10, 11, 16, 20],
@@ -4489,7 +4514,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "area_name",
-      "minzoom": 12,
+      "minzoom": 12.0,
       "layout": {
         "text-font": ["FrutigerNeueItalic"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 10, 11, 16, 20],
@@ -4533,7 +4558,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "poi",
-      "minzoom": 15,
+      "minzoom": 15.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueCondensedRegular"],
@@ -4690,7 +4715,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "poi",
-      "minzoom": 13,
+      "minzoom": 13.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueCondensedRegular"],
@@ -4965,8 +4990,8 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "mountain_peak",
-      "minzoom": 15,
-      "maxzoom": 24,
+      "minzoom": 15.0,
+      "maxzoom": 24.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueItalic"],
@@ -5061,8 +5086,8 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "mountain_peak",
-      "minzoom": 13,
-      "maxzoom": 24,
+      "minzoom": 13.0,
+      "maxzoom": 24.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueItalic"],
@@ -5161,8 +5186,8 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "mountain_peak",
-      "minzoom": 12,
-      "maxzoom": 24,
+      "minzoom": 12.0,
+      "maxzoom": 24.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueItalic"],
@@ -5261,8 +5286,8 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "mountain_peak",
-      "minzoom": 11,
-      "maxzoom": 24,
+      "minzoom": 11.0,
+      "maxzoom": 24.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueItalic"],
@@ -5361,8 +5386,8 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "mountain_peak",
-      "minzoom": 10,
-      "maxzoom": 24,
+      "minzoom": 10.0,
+      "maxzoom": 24.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueItalic"],
@@ -5461,8 +5486,8 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "place",
-      "minzoom": 14,
-      "maxzoom": 24,
+      "minzoom": 14.0,
+      "maxzoom": 24.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueCondensedMedium"],
@@ -5549,7 +5574,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "poi",
-      "minzoom": 14,
+      "minzoom": 14.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueCondensedRegular"],
@@ -5611,8 +5636,8 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "place",
-      "minzoom": 11,
-      "maxzoom": 24,
+      "minzoom": 11.0,
+      "maxzoom": 24.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueCondensedMedium"],
@@ -5698,8 +5723,8 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "place",
-      "minzoom": 11,
-      "maxzoom": 24,
+      "minzoom": 11.0,
+      "maxzoom": 24.0,
       "layout": {
         "text-font": ["FrutigerNeueCondensedRegular"],
         "text-size": [
@@ -5739,8 +5764,8 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "place",
-      "minzoom": 7,
-      "maxzoom": 18,
+      "minzoom": 7.0,
+      "maxzoom": 18.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueCondensedMedium"],
@@ -5805,7 +5830,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "aerodrome_label",
-      "minzoom": 11,
+      "minzoom": 11.0,
       "layout": {
         "icon-size": ["interpolate", ["linear"], ["zoom"], 11, 0.7, 14, 1],
         "text-font": ["FrutigerNeueCondensedRegular"],
@@ -5860,8 +5885,8 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "mountain_peak",
-      "minzoom": 9,
-      "maxzoom": 24,
+      "minzoom": 9.0,
+      "maxzoom": 24.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueItalic"],
@@ -5973,8 +5998,8 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "place",
-      "minzoom": 6,
-      "maxzoom": 16,
+      "minzoom": 6.0,
+      "maxzoom": 16.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueCondensedBold"],
@@ -6037,8 +6062,8 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "water_name",
-      "minzoom": 7,
-      "maxzoom": 24,
+      "minzoom": 7.0,
+      "maxzoom": 24.0,
       "layout": {
         "text-font": ["FrutigerNeueItalic"],
         "text-size": [
@@ -6189,7 +6214,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "park",
-      "minzoom": 8,
+      "minzoom": 8.0,
       "layout": {
         "text-font": ["FrutigerNeueRegular"],
         "text-size": [
@@ -6222,7 +6247,7 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "area_name",
-      "minzoom": 11,
+      "minzoom": 11.0,
       "layout": {
         "text-font": ["FrutigerNeueRegular"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 10, 14, 16, 23],
@@ -6257,8 +6282,8 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "place",
-      "minzoom": 2,
-      "maxzoom": 14,
+      "minzoom": 2.0,
+      "maxzoom": 14.0,
       "layout": {
         "icon-size": 1,
         "text-font": ["FrutigerNeueCondensedBold"],
@@ -6322,8 +6347,8 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "place",
-      "minzoom": 0,
-      "maxzoom": 7,
+      "minzoom": 0.0,
+      "maxzoom": 7.0,
       "layout": {
         "text-font": ["FrutigerNeueCondensedRegular"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 1, 12, 6, 16],
@@ -6347,8 +6372,8 @@
       "type": "symbol",
       "source": "swissmaptiles",
       "source-layer": "place",
-      "minzoom": 0,
-      "maxzoom": 7,
+      "minzoom": 0.0,
+      "maxzoom": 7.0,
       "layout": {
         "text-font": ["FrutigerNeueCondensedRegular"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 1, 12, 6, 16],
@@ -6370,16 +6395,13 @@
   ],
   "metadata": {
     "maputnik:renderer": "mbgljs",
-    "openmaptiles:version": "3.x",
-    "ga:version": "v1.6.0",
-    "ga:publisher": "CI:6ebb040b-18ed-494d-b728-9623a326a9ae",
-    "ga:branch": "master"
+    "openmaptiles:version": "3.x"
   },
   "sprite": "{*PROTOCOL*}://{*HOSTNAME*}{*BASEURL*}/tiles/sprite/sprite",
   "glyphs": "{*PROTOCOL*}://{*HOSTNAME*}{*BASEURL*}/tiles/fonts/{fontstack}/{range}.pbf",
-  "center": [8.265, 46.786],
-  "zoom": 7.64,
-  "bearing": 0,
-  "pitch": 0,
+  "bearing": 0.0,
+  "pitch": 0.0,
+  "center": [7.644344657607917, 46.75870946150491],
+  "zoom": 14.051150031633133,
   "transition": {}
 }

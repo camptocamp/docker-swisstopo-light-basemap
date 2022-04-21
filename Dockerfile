@@ -17,6 +17,8 @@ RUN unzip master.zip
 RUN wget --no-check-certificate https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v2.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
 RUN mkdir -p /pbf
 RUN ./mbutil-master/mb-util --do_compression --image_format=pbf ch.swisstopo.leichte-basiskarte.vt.mbtiles /pbf/basemap
+COPY data /data
+RUN ./mbutil-master/mb-util --do_compression --image_format=pbf /data/hillshade_v0.0.3.mbtiles /pbf/hillshade
 
 # Runtime image
 FROM openresty/openresty:1.19.9.1-10-alpine-fat

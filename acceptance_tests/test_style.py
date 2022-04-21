@@ -11,6 +11,10 @@ def test_get_style_no_proxy(connection):
     assert (
         answer["sources"]["swissmaptiles"]["url"] == "http://mvt:8080/tiles/tiles.json"
     )
+    assert (
+        answer["sources"]["basiskarte_hillshade_v0.0.3"]["url"]
+        == "http://mvt:8080/tiles/tileset_v3.0.0_beta.json"
+    )
 
 
 def test_get_style_with_proxy(connection):
