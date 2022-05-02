@@ -12,9 +12,9 @@ RUN \
     apt-get install --assume-yes --no-install-recommends apt-transport-https && \
 	apt-get install --assume-yes --no-install-recommends wget unzip python python3-pip python3-dev python3-wheel python3-pkgconfig libgraphviz-dev libpq-dev binutils gcc g++ cython3 && \
 	apt-get clean
-RUN wget --no-check-certificate https://github.com/mapbox/mbutil/archive/refs/heads/master.zip
+RUN wget https://github.com/mapbox/mbutil/archive/refs/heads/master.zip
 RUN unzip master.zip
-RUN wget --no-check-certificate https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v2.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
+RUN wget https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v2.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
 RUN mkdir -p /pbf
 RUN ./mbutil-master/mb-util --do_compression --image_format=pbf ch.swisstopo.leichte-basiskarte.vt.mbtiles /pbf/basemap
 
