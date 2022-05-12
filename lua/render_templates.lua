@@ -39,7 +39,7 @@ if wmts_hillshade_url == nil then
     wmts_hillshade_url = "https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.leichte-basiskarte_reliefschattierung/default/current/3857/{z}/{x}/{y}.png"
 else 
     -- for example: "/geoserver/gwc/service/wmts/rest/flicc:ch.swisstopo.leichte-basiskarte_reliefschattierung/raster/EPSG:3857/EPSG:3857:{z}/{y}/{x}?format=image/png"
-    wmts_hillshade_url = proto .. "://" .. hostname .. baseurl .. wmts_hillshade_url
+    wmts_hillshade_url = proto .. "://" .. hostname .. wmts_hillshade_url
 end
 
 -- cache-key = proto .. hostname .. baseurl
