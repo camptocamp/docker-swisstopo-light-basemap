@@ -33,7 +33,7 @@ The templates can render any kind of url, the idea is that this server should be
 - VECTORTILES_PROTOCOL: "http" or "https"
 - VECTORTILES_FQDN: basically what should be in the `HOST` header
 - VECTORTILES_BASEURL: any additional path between the host and the root of the service
-- SWISSTOPO_WMTS_HILLSHADE_URL: if the WMTS server for hillshade runs on the same server, put here the path that follows the `VECTORTILES_BASEURL` content.
+- SWISSTOPO_WMTS_HILLSHADE_URL: if the WMTS server for hillshade runs on the same server, put here the path that follows the `VECTORTILES_FQDN` content.
 
 #### example
 
