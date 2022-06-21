@@ -4,7 +4,7 @@ name: Rebuild
 # scheduled GH-actions will run on the default branch only, master
 on:
   schedule:
-    - cron: "30 3 * * 2"
+    - cron: "30 3 * * 3"
 
 jobs:
   rebuild:
@@ -28,7 +28,6 @@ jobs:
           ci-gpg-private-key: ${{secrets.CI_GPG_PRIVATE_KEY}}
           github-gopass-ci-token: ${{secrets.GOPASS_CI_GITHUB_TOKEN}}
           patterns: docker
-        if: github.repository == 'camptocamp/docker-geoserver'
 
       - run: echo "${HOME}/.local/bin" >> ${GITHUB_PATH}
       - run: python3 -m pip install --user --requirement=ci/requirements.txt
