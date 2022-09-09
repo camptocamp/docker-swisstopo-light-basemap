@@ -19,10 +19,11 @@ RUN mkdir -p /pbf
 RUN ./mbutil-master/mb-util --do_compression --image_format=pbf ch.swisstopo.leichte-basiskarte.vt.mbtiles /pbf/basemap
 
 # Runtime image
-FROM openresty/openresty:1.21.4.1-2-alpine-fat
+FROM openresty/openresty:1.21.4.1-3-alpine-fat
 COPY tiles /usr/share/nginx/html/tiles
 COPY --from=builder /pbf /usr/share/nginx/html/tiles/pbf
-RUN opm get bungle/lua-resty-template
+COPY template.lua /usr/local/openresty/site/lualib/resty/template.lua
+
 COPY default.conf /etc/nginx/conf.d/default.conf
 COPY nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 COPY templates /usr/share/nginx/html/
