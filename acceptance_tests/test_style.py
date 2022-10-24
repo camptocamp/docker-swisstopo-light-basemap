@@ -2,7 +2,7 @@ from c2cwsgiutils.acceptance.connection import CacheExpected
 
 
 def test_get_style_no_proxy(connection):
-    """test the WFS connection -- cnx"""
+    """test get style"""
     answer = connection.get_json(
         url="style.json",
         cache_expected=CacheExpected.DONT_CARE,
@@ -13,8 +13,18 @@ def test_get_style_no_proxy(connection):
     )
 
 
+def test_options_style(connection):
+    """test OPTIONS with CORS"""
+    answer = connection.options(
+        url="style.json",
+        cache_expected=CacheExpected.DONT_CARE,
+        expected_status=204,
+    )
+    assert answer.headers.get("Access-Control-Allow-Origin") == "*"
+
+
 def test_get_style_with_proxy(connection):
-    """test the WFS connection -- cnx"""
+    """test get style with proxy settings"""
     answer = connection.get_json(
         url="style.json",
         headers={
