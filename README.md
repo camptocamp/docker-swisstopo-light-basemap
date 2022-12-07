@@ -26,7 +26,7 @@ The templates can render any kind of url, the idea is that this server should be
 
 - X-Forwarded-Host: basically what should be in the `HOST` header
 - X-Forwarded-Proto: "http" or "https"
-- Forwarded-Path: any additional path between the host and the root of the service
+- X-Forwarded-Prefix: any additional path between the hostname and the root of the service.
 
 #### At startup, via env variables
 
