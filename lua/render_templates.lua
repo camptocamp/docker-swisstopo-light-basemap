@@ -19,7 +19,7 @@ end
 
 baseurl = os.getenv("VECTORTILES_BASEURL")
 if baseurl == nil then
-    baseurl = ngx.req.get_headers()['Forwarded-Path']
+    baseurl = ngx.req.get_headers()['X-Forwarded-Prefix']
 end
 if baseurl == nil then
     baseurl = ""

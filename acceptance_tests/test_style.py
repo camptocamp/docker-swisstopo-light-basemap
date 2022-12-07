@@ -30,7 +30,7 @@ def test_get_style_with_proxy(connection):
         headers={
             "X-forwarded-host": "test.com",
             "X-Forwarded-Proto": "https",
-            "Forwarded-Path": "/some/url",
+            "X-Forwarded-Prefix": "/some/url",
         },
         cache_expected=CacheExpected.DONT_CARE,
         cors=True,
