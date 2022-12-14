@@ -24,7 +24,8 @@ COPY tiles /usr/share/nginx/html/tiles
 COPY --from=builder /pbf /usr/share/nginx/html/tiles/pbf
 COPY template.lua /usr/local/openresty/site/lualib/resty/template.lua
 
-COPY default.conf /etc/nginx/conf.d/default.conf
 COPY nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
+COPY default.conf /usr/local/openresty/nginx/conf/mvt/default.conf
+COPY mvt.conf /usr/local/openresty/nginx/conf/mvt/mvt.conf
 COPY templates /usr/share/nginx/html/
 COPY lua /usr/local/openresty/nginx/lua
