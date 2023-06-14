@@ -4,15 +4,17 @@
   "name": "lbm_v2.0.0_ch",
   "sources": {
     "swissmaptiles": {
+      "type": "vector",
       "url": "{*PROTOCOL*}://{*HOSTNAME*}{*BASEURL*}/tiles/tiles.json",
-      "type": "vector"
+      "bounds": [5.140299, 45.398122, 11.477436, 48.230617]
     },
     "relief_shading": {
       "type": "raster",
       "tiles": ["{*SWISSTOPO_WMTS_HILLSHADE_URL*}"],
       "tileSize": 256,
       "minzoom": 0,
-      "maxzoom": 22
+      "maxzoom": 22,
+      "bounds": [5.140299, 45.398122, 11.477436, 48.230617]
     }
   },
   "layers": [
