@@ -19,12 +19,8 @@ RUN mkdir -p /pbf
 RUN ./mbutil-master/mb-util --do_compression --image_format=pbf ch.swisstopo.leichte-basiskarte.vt.mbtiles /pbf/basemap
 
 # Runtime image
-FROM openresty/openresty:1.21.4.1-8-bullseye-fat
-RUN \
-    . /etc/os-release && \
-    apt-get update && \
-    apt-get --assume-yes upgrade && \
-    apt-get clean
+FROM openresty/openresty:1.21.4.1-8-alpine-fat
+RUN apk update && apk cache clean
 COPY tiles /usr/share/nginx/html/tiles
 COPY --from=builder /pbf /usr/share/nginx/html/tiles/pbf
 COPY template.lua /usr/local/openresty/site/lualib/resty/template.lua
