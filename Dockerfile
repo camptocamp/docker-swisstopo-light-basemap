@@ -35,7 +35,7 @@ ARG BUILD_DATE
 ENV image_build_date=[Build_$BUILD_DATE]
 
 COPY nginx.conf.template /etc/nginx/templates/nginx.conf.template
-RUN envsubst "\$image_build_date" < /etc/nginx/templates/nginx.conf.template.template > /usr/local/openresty/nginx/conf/nginx.conf.template
+RUN envsubst "\$image_build_date" < /etc/nginx/templates/nginx.conf.template > /usr/local/openresty/nginx/conf/nginx.conf
 
 COPY default.conf /usr/local/openresty/nginx/conf/mvt/default.conf
 COPY mvt.conf /usr/local/openresty/nginx/conf/mvt/mvt.conf
