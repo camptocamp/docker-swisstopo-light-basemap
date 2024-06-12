@@ -19,7 +19,7 @@ RUN mkdir -p /pbf
 RUN ./mbutil-master/mb-util --do_compression --image_format=pbf ch.swisstopo.leichte-basiskarte.vt.mbtiles /pbf/basemap
 
 # Runtime image
-FROM openresty/openresty:1.21.4.1-8-jammy
+FROM openresty/openresty:1.21.4.3-2-jammy
 RUN \
     . /etc/os-release && \
     apt-get update && \
@@ -31,7 +31,12 @@ COPY tiles /usr/share/nginx/html/tiles
 COPY --from=builder /pbf /usr/share/nginx/html/tiles/pbf
 COPY template.lua /usr/local/openresty/site/lualib/resty/template.lua
 
-COPY nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
+ARG BUILD_DATE
+ENV image_build_date=[Build_$BUILD_DATE]
+
+COPY nginx.conf /etc/nginx/templates/nginx.conf.template
+RUN envsubst "\$image_build_date" < /etc/nginx/templates/nginx.conf.template > /usr/local/openresty/nginx/conf/nginx.conf
+
 COPY default.conf /usr/local/openresty/nginx/conf/mvt/default.conf
 COPY mvt.conf /usr/local/openresty/nginx/conf/mvt/mvt.conf
 COPY templates /usr/share/nginx/html/

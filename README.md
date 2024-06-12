@@ -10,7 +10,7 @@ The image is based on [openresty](https://openresty.org/en/) for the dynamic `st
 
 ## Building the image
 
-`docker build -t camptocamp/swisstopo-light-basemap:latest .`
+`docker build -t camptocamp/swisstopo-light-basemap:latest --build-arg BUILD_DATE="$(date +%Y-%m-%d)" .`
 
 ## Run the server
 
