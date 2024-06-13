@@ -14,8 +14,10 @@ RUN \
 	apt-get clean
 RUN wget https://github.com/mapbox/mbutil/archive/refs/heads/master.zip
 RUN unzip master.zip
-RUN wget https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.base.vt/v1.0.0/ch.swisstopo.base.vt.mbtiles
-RUN wget https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.relief.vt/v1.0.0/ch.swisstopo.relief.vt.mbtiles
+RUN echo "Download basemap mbtiles"
+RUN wget https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.base.vt/v1.0.0/ch.swisstopo.base.vt.mbtiles > /dev/null 2>&1
+RUN echo "Download relief mbtiles"
+RUN wget https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.relief.vt/v1.0.0/ch.swisstopo.relief.vt.mbtiles > /dev/null 2>&1
 RUN mkdir -p /pbf
 RUN ./mbutil-master/mb-util --do_compression --image_format=pbf ch.swisstopo.base.vt.mbtiles /pbf/basemap
 RUN ./mbutil-master/mb-util --do_compression --image_format=pbf ch.swisstopo.relief.vt.mbtiles /pbf/relief
@@ -29,7 +31,6 @@ RUN \
     apt-get --assume-yes upgrade && \
     apt-get clean && \
     dpkg --force all --remove libsystemd0 libudev1
-
 COPY tiles /usr/share/nginx/html/tiles
 COPY --from=builder /pbf /usr/share/nginx/html/tiles/pbf
 COPY template.lua /usr/local/openresty/site/lualib/resty/template.lua
