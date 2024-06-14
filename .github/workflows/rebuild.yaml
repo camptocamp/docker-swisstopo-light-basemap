@@ -4,19 +4,21 @@ name: Rebuild
 # scheduled GH-actions will run on the default branch only, master
 on:
   schedule:
-    - cron: "30 3 * * 3"
+    - cron: 30 2 * * *
 
 jobs:
   rebuild:
-    runs-on: ubuntu-20.04
     name: Rebuild
-    timeout-minutes: 20
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+
     strategy:
       fail-fast: false
       matrix:
         branch:
           - master
           - v2.0.0
+          - v3.0.0
 
     steps:
       - uses: actions/checkout@v2
@@ -28,6 +30,7 @@ jobs:
           ci-gpg-private-key: ${{secrets.CI_GPG_PRIVATE_KEY}}
           github-gopass-ci-token: ${{secrets.GOPASS_CI_GITHUB_TOKEN}}
           patterns: docker
+        if: github.repository == 'camptocamp/docker-swisstopo-light-basemap'
 
       - run: echo "${HOME}/.local/bin" >> ${GITHUB_PATH}
       - run: python3 -m pip install --user --requirement=ci/requirements.txt
