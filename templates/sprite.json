@@ -1,1 +1,380 @@
-{"wetland_blue":{"width":64,"height":64,"x":0,"y":0,"pixelRatio":1},"windturbine_grey":{"width":24,"height":32,"x":64,"y":0,"pixelRatio":1},"airplane_large_grey":{"width":28,"height":28,"x":88,"y":0,"pixelRatio":1},"airplane_medium_grey":{"width":26,"height":26,"x":0,"y":64,"pixelRatio":1},"communications_tower_grey":{"width":18,"height":26,"x":26,"y":64,"pixelRatio":1},"observation_tower_grey":{"width":18,"height":25,"x":44,"y":64,"pixelRatio":1},"airplane_small_grey":{"width":24,"height":24,"x":62,"y":64,"pixelRatio":1},"arrow_line_blue":{"width":24,"height":19,"x":86,"y":64,"pixelRatio":1},"golf_grey":{"width":14,"height":18,"x":110,"y":64,"pixelRatio":1},"arrow_blue":{"width":6,"height":16,"x":116,"y":0,"pixelRatio":1},"arrow_brown":{"width":6,"height":16,"x":122,"y":0,"pixelRatio":1},"arrow_grey":{"width":6,"height":16,"x":0,"y":90,"pixelRatio":1},"castle_grey":{"width":10,"height":16,"x":6,"y":90,"pixelRatio":1},"forkknife_crossed_grey":{"width":17,"height":16,"x":16,"y":90,"pixelRatio":1},"orchard_green":{"width":16,"height":16,"x":33,"y":90,"pixelRatio":1},"vinyard_green":{"width":16,"height":16,"x":49,"y":90,"pixelRatio":1},"viewpoint_grey":{"width":18,"height":15,"x":65,"y":90,"pixelRatio":1},"box_white_grey_casing_1":{"width":12,"height":14,"x":83,"y":90,"pixelRatio":1},"box_white_grey_casing_10":{"width":60,"height":14,"x":0,"y":106,"pixelRatio":1},"box_white_grey_casing_11":{"width":66,"height":14,"x":60,"y":106,"pixelRatio":1},"box_white_grey_casing_12":{"width":72,"height":14,"x":126,"y":106,"pixelRatio":1},"box_white_grey_casing_2":{"width":18,"height":14,"x":198,"y":106,"pixelRatio":1},"box_white_grey_casing_3":{"width":22,"height":14,"x":216,"y":106,"pixelRatio":1},"box_white_grey_casing_4":{"width":28,"height":14,"x":95,"y":90,"pixelRatio":1},"box_white_grey_casing_5":{"width":34,"height":14,"x":123,"y":90,"pixelRatio":1},"box_white_grey_casing_6":{"width":38,"height":14,"x":157,"y":90,"pixelRatio":1},"box_white_grey_casing_7":{"width":44,"height":14,"x":195,"y":90,"pixelRatio":1},"box_white_grey_casing_8":{"width":50,"height":14,"x":124,"y":64,"pixelRatio":1},"box_white_grey_casing_9":{"width":54,"height":14,"x":174,"y":64,"pixelRatio":1},"camping_grey":{"width":16,"height":14,"x":238,"y":106,"pixelRatio":1},"hospital_grey":{"width":14,"height":14,"x":239,"y":90,"pixelRatio":1},"cave_grey":{"width":18,"height":13,"x":228,"y":64,"pixelRatio":1},"helicopter_grey":{"width":25,"height":13,"x":128,"y":0,"pixelRatio":1},"circle_circle_dark_grey_12":{"width":12,"height":12,"x":153,"y":0,"pixelRatio":1},"circle_dark_grey_12":{"width":12,"height":12,"x":165,"y":0,"pixelRatio":1},"dot_circle_dark_grey_12":{"width":12,"height":12,"x":177,"y":0,"pixelRatio":1},"circle_circle_dark_grey_10":{"width":10,"height":10,"x":246,"y":64,"pixelRatio":1},"circle_dark_grey_10":{"width":10,"height":10,"x":189,"y":0,"pixelRatio":1},"dot_circle_dark_grey_10":{"width":10,"height":10,"x":199,"y":0,"pixelRatio":1},"waterfall_blue":{"width":6,"height":9,"x":209,"y":0,"pixelRatio":1},"circle_dark_grey_8":{"width":8,"height":8,"x":215,"y":0,"pixelRatio":1},"dot_circle_dark_grey_8":{"width":8,"height":8,"x":223,"y":0,"pixelRatio":1},"dot_dark_grey_8":{"width":8,"height":8,"x":231,"y":0,"pixelRatio":1},"square_red":{"width":7,"height":7,"x":239,"y":0,"pixelRatio":1},"circle_dark_grey_6":{"width":6,"height":6,"x":246,"y":0,"pixelRatio":1},"dot_circle_dark_grey_6":{"width":6,"height":6,"x":0,"y":120,"pixelRatio":1},"dot_dark_grey_6":{"width":6,"height":6,"x":6,"y":120,"pixelRatio":1},"circle_dark_grey_4":{"width":4,"height":4,"x":12,"y":120,"pixelRatio":1},"dot_blue":{"width":4,"height":4,"x":16,"y":120,"pixelRatio":1},"dot_dark_grey_4":{"width":4,"height":4,"x":20,"y":120,"pixelRatio":1},"dot_red":{"width":4,"height":4,"x":24,"y":120,"pixelRatio":1},"dot_dark_grey_3":{"width":3,"height":3,"x":28,"y":120,"pixelRatio":1},"line_blue_long":{"width":24,"height":2,"x":31,"y":120,"pixelRatio":1},"line_blue_short":{"width":18,"height":2,"x":55,"y":120,"pixelRatio":1}}
+{
+  "wetland_blue": {
+    "width": 64,
+    "height": 64,
+    "x": 0,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "windturbine_grey": {
+    "width": 24,
+    "height": 32,
+    "x": 64,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "airplane_large_grey": {
+    "width": 28,
+    "height": 28,
+    "x": 88,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "airplane_medium_grey": {
+    "width": 26,
+    "height": 26,
+    "x": 0,
+    "y": 64,
+    "pixelRatio": 1
+  },
+  "communications_tower_grey": {
+    "width": 18,
+    "height": 26,
+    "x": 26,
+    "y": 64,
+    "pixelRatio": 1
+  },
+  "observation_tower_grey": {
+    "width": 18,
+    "height": 25,
+    "x": 44,
+    "y": 64,
+    "pixelRatio": 1
+  },
+  "airplane_small_grey": {
+    "width": 24,
+    "height": 24,
+    "x": 62,
+    "y": 64,
+    "pixelRatio": 1
+  },
+  "arrow_line_blue": {
+    "width": 24,
+    "height": 19,
+    "x": 86,
+    "y": 64,
+    "pixelRatio": 1
+  },
+  "golf_grey": {
+    "width": 14,
+    "height": 18,
+    "x": 110,
+    "y": 64,
+    "pixelRatio": 1
+  },
+  "arrow_blue": {
+    "width": 6,
+    "height": 16,
+    "x": 116,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "arrow_brown": {
+    "width": 6,
+    "height": 16,
+    "x": 122,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "arrow_grey": {
+    "width": 6,
+    "height": 16,
+    "x": 0,
+    "y": 90,
+    "pixelRatio": 1
+  },
+  "castle_grey": {
+    "width": 10,
+    "height": 16,
+    "x": 6,
+    "y": 90,
+    "pixelRatio": 1
+  },
+  "forkknife_crossed_grey": {
+    "width": 17,
+    "height": 16,
+    "x": 16,
+    "y": 90,
+    "pixelRatio": 1
+  },
+  "orchard_green": {
+    "width": 16,
+    "height": 16,
+    "x": 33,
+    "y": 90,
+    "pixelRatio": 1
+  },
+  "vinyard_green": {
+    "width": 16,
+    "height": 16,
+    "x": 49,
+    "y": 90,
+    "pixelRatio": 1
+  },
+  "viewpoint_grey": {
+    "width": 18,
+    "height": 15,
+    "x": 65,
+    "y": 90,
+    "pixelRatio": 1
+  },
+  "box_white_grey_casing_1": {
+    "width": 12,
+    "height": 14,
+    "x": 83,
+    "y": 90,
+    "pixelRatio": 1
+  },
+  "box_white_grey_casing_10": {
+    "width": 60,
+    "height": 14,
+    "x": 0,
+    "y": 106,
+    "pixelRatio": 1
+  },
+  "box_white_grey_casing_11": {
+    "width": 66,
+    "height": 14,
+    "x": 60,
+    "y": 106,
+    "pixelRatio": 1
+  },
+  "box_white_grey_casing_12": {
+    "width": 72,
+    "height": 14,
+    "x": 126,
+    "y": 106,
+    "pixelRatio": 1
+  },
+  "box_white_grey_casing_2": {
+    "width": 18,
+    "height": 14,
+    "x": 198,
+    "y": 106,
+    "pixelRatio": 1
+  },
+  "box_white_grey_casing_3": {
+    "width": 22,
+    "height": 14,
+    "x": 216,
+    "y": 106,
+    "pixelRatio": 1
+  },
+  "box_white_grey_casing_4": {
+    "width": 28,
+    "height": 14,
+    "x": 95,
+    "y": 90,
+    "pixelRatio": 1
+  },
+  "box_white_grey_casing_5": {
+    "width": 34,
+    "height": 14,
+    "x": 123,
+    "y": 90,
+    "pixelRatio": 1
+  },
+  "box_white_grey_casing_6": {
+    "width": 38,
+    "height": 14,
+    "x": 157,
+    "y": 90,
+    "pixelRatio": 1
+  },
+  "box_white_grey_casing_7": {
+    "width": 44,
+    "height": 14,
+    "x": 195,
+    "y": 90,
+    "pixelRatio": 1
+  },
+  "box_white_grey_casing_8": {
+    "width": 50,
+    "height": 14,
+    "x": 124,
+    "y": 64,
+    "pixelRatio": 1
+  },
+  "box_white_grey_casing_9": {
+    "width": 54,
+    "height": 14,
+    "x": 174,
+    "y": 64,
+    "pixelRatio": 1
+  },
+  "camping_grey": {
+    "width": 16,
+    "height": 14,
+    "x": 238,
+    "y": 106,
+    "pixelRatio": 1
+  },
+  "hospital_grey": {
+    "width": 14,
+    "height": 14,
+    "x": 239,
+    "y": 90,
+    "pixelRatio": 1
+  },
+  "cave_grey": {
+    "width": 18,
+    "height": 13,
+    "x": 228,
+    "y": 64,
+    "pixelRatio": 1
+  },
+  "helicopter_grey": {
+    "width": 25,
+    "height": 13,
+    "x": 128,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "circle_circle_dark_grey_12": {
+    "width": 12,
+    "height": 12,
+    "x": 153,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "circle_dark_grey_12": {
+    "width": 12,
+    "height": 12,
+    "x": 165,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "dot_circle_dark_grey_12": {
+    "width": 12,
+    "height": 12,
+    "x": 177,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "circle_circle_dark_grey_10": {
+    "width": 10,
+    "height": 10,
+    "x": 246,
+    "y": 64,
+    "pixelRatio": 1
+  },
+  "circle_dark_grey_10": {
+    "width": 10,
+    "height": 10,
+    "x": 189,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "dot_circle_dark_grey_10": {
+    "width": 10,
+    "height": 10,
+    "x": 199,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "waterfall_blue": {
+    "width": 6,
+    "height": 9,
+    "x": 209,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "circle_dark_grey_8": {
+    "width": 8,
+    "height": 8,
+    "x": 215,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "dot_circle_dark_grey_8": {
+    "width": 8,
+    "height": 8,
+    "x": 223,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "dot_dark_grey_8": {
+    "width": 8,
+    "height": 8,
+    "x": 231,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "square_red": {
+    "width": 7,
+    "height": 7,
+    "x": 239,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "circle_dark_grey_6": {
+    "width": 6,
+    "height": 6,
+    "x": 246,
+    "y": 0,
+    "pixelRatio": 1
+  },
+  "dot_circle_dark_grey_6": {
+    "width": 6,
+    "height": 6,
+    "x": 0,
+    "y": 120,
+    "pixelRatio": 1
+  },
+  "dot_dark_grey_6": {
+    "width": 6,
+    "height": 6,
+    "x": 6,
+    "y": 120,
+    "pixelRatio": 1
+  },
+  "circle_dark_grey_4": {
+    "width": 4,
+    "height": 4,
+    "x": 12,
+    "y": 120,
+    "pixelRatio": 1
+  },
+  "dot_blue": {
+    "width": 4,
+    "height": 4,
+    "x": 16,
+    "y": 120,
+    "pixelRatio": 1
+  },
+  "dot_dark_grey_4": {
+    "width": 4,
+    "height": 4,
+    "x": 20,
+    "y": 120,
+    "pixelRatio": 1
+  },
+  "dot_red": {
+    "width": 4,
+    "height": 4,
+    "x": 24,
+    "y": 120,
+    "pixelRatio": 1
+  },
+  "dot_dark_grey_3": {
+    "width": 3,
+    "height": 3,
+    "x": 28,
+    "y": 120,
+    "pixelRatio": 1
+  },
+  "line_blue_long": {
+    "width": 24,
+    "height": 2,
+    "x": 31,
+    "y": 120,
+    "pixelRatio": 1
+  },
+  "line_blue_short": {
+    "width": 18,
+    "height": 2,
+    "x": 55,
+    "y": 120,
+    "pixelRatio": 1
+  }
+}
