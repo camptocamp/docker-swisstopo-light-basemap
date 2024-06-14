@@ -4,8 +4,8 @@ name: Rebuild
 # scheduled GH-actions will run on the default branch only, master
 on:
   schedule:
-    - cron: "*/30 * * * *"
-    
+    - cron: "0 3 * * 0"
+
 jobs:
   rebuild:
     name: Rebuild
