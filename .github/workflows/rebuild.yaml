@@ -9,7 +9,7 @@ on:
 jobs:
   rebuild:
     name: Rebuild
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
 
     strategy:
@@ -21,7 +21,7 @@ jobs:
           - v3.0.0
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           ref: ${{matrix.branch}}
 
