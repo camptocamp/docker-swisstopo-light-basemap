@@ -1,5 +1,5 @@
 # Builder image
-FROM ubuntu:20.04 as builder
+FROM ubuntu:24.04 as builder
 SHELL ["/bin/bash", "-o", "pipefail", "-cux"]
 ENV \
     DEBIAN_FRONTEND=noninteractive \
