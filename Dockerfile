@@ -23,7 +23,7 @@ RUN ./mbutil-master/mb-util --do_compression --image_format=pbf ch.swisstopo.bas
 RUN ./mbutil-master/mb-util --do_compression --image_format=pbf ch.swisstopo.relief.vt.mbtiles /pbf/relief
 
 # Runtime image
-FROM openresty/openresty:1.21.4.3-2-jammy
+FROM openresty/openresty:1.27.1.2-2-jammy
 RUN \
     . /etc/os-release && \
     apt-get update && \
