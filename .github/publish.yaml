@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/camptocamp/tag-publish/1.3.3/tag_publish/schema.json
+
+docker:
+  images:
+    - name: camptocamp/swisstopo-light-basemap
+  repository:
+    github:
+      host: ghcr.io
+      versions_type:
+        - tag
+        - default_branch
+        - stabilization_branch
